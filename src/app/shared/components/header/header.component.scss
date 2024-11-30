@@ -1,0 +1,162 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100;
+
+  .logo {
+    span {
+      font-size: 20px;
+      font-weight: 600;
+      color: #00bcd4;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #00bcd4;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    &.open .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.open .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+
+  .navigation {
+    display: flex;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 1;
+    max-height: none;
+    overflow: visible;
+
+    ul {
+      display: flex;
+      gap: 35px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          color: #6B7280;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 500;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #00bcd4;
+          }
+        }
+      }
+    }
+
+    &.active {
+      opacity: 1;
+      max-height: none;
+    }
+  }
+
+  .phone {
+    a {
+      display: flex;
+      align-items: center;
+      color: #374151;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+
+      img {
+        filter: brightness(0) saturate(100%) invert(56%) sepia(100%) hue-rotate(180deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .navigation {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 100;
+      padding: 60px 20px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &.active {
+        display: flex;
+        animation: slideDown 0.3s ease-out;
+      }
+
+      ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      li {
+        a {
+          font-size: 18px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.phone-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.navigation a:hover {
+  color: #00796b;
+  text-decoration: underline;
+}

@@ -1,0 +1,23 @@
+<header class="header">
+  <div class="logo">
+    <span>Clínica Dental</span>
+  </div>
+  <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" [class.open]="menuOpen">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  <nav class="navigation" [class.active]="menuOpen">
+    <ul>
+      <li *ngFor="let link of navLinks">
+        <a [href]="link.url">{{ link.text }}</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="phone">
+    <a [href]="'tel:' + phoneNumber">
+      <img src="../../../../assets/icons/phone-call.png" alt="Teléfono" class="phone-icon">
+      {{phoneNumber}}
+    </a>
+  </div>
+</header>
