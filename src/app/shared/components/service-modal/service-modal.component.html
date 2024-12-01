@@ -1,0 +1,28 @@
+<div class="service-modal" [ngClass]="{'fade-out': isClosing}" *ngIf="service">
+    <div class="modal-content">
+        <div class="service-info">
+            <h2>{{ service.title }}</h2>
+            <p>{{ service.description }}</p>
+        </div>
+        <div class="sub-services">
+            <h3>SERVICIOS</h3>
+            <div class="sub-service-list">
+                <div class="sub-service" *ngFor="let subService of service.subServices">
+                    <h4>{{ subService.title }}</h4>
+                    <p>{{ subService.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="close-button" (click)="closeServiceModal()">Cerrar</button>
+</div>
+    <div *ngIf="moreServicesModal" class="more-services-modal">
+    <h2>Servicios Adicionales</h2>
+    <div class="sub-service-list">
+        <div class="sub-service" *ngFor="let subService of moreServices">
+            <h4>{{ subService.title }}</h4>
+            <p>{{ subService.description }}</p>
+        </div>
+    </div>
+    <button class="close-button" (click)="closeServiceModal()">Cerrar</button>
+</div>

@@ -1,0 +1,37 @@
+<section class="services">
+    <div class="presentation">
+  <h2>TODOS LOS <span class="necessary-services">SERVICIOS NECESARIOS</span> EN UN SOLO LUGAR</h2>
+  <p>En la clínica encontrarás todo para cuidar tus dientes: desde exámenes preventivos hasta implantación.</p>
+    </div>
+  <div class="services-container">
+    <div class="top">
+      
+    <div class="service-card service-card-1" [ngStyle]="{'background-image': 'url(assets/images/Estetica1.jpeg)'}" (click)="showServiceModal(services[0])">
+      <h3>Estética Dental</h3>
+      
+    </div>
+    <div class="service-card service-card-2" [ngStyle]="{'background-image': 'url(assets/images/Protesis1.jpeg)'}" (click)="showServiceModal(services[1])">
+      <h3>Prótesis</h3>
+      
+    </div>
+    </div>
+    <div class="bottom">
+      <div class="service-card service-card-3" [ngStyle]="{'background-image': 'url(assets/images/Cirugia.jpeg)'}" (click)="showServiceModal(services[2])">
+        <h3>Cirugía Dental</h3>
+        
+      </div>
+      <div class="service-card service-card-4" [ngStyle]="{'background-image': 'url(assets/images/Ortodoncia1.jpeg)'}" (click)="showServiceModal(services[3])">
+        <h3>Ortodoncia</h3>
+        
+      </div>
+      <div class="more-services" (click)="showMoreServicesModal()" >
+        <h3>Ver más servicios</h3>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selectedService || moreServicesModal" class="service-modal-container" (click)="closeServiceModal()">
+    <div (click)="$event.stopPropagation()">
+      <app-service-modal class="service-modal" [service]="selectedService" [moreServices]="moreServices" (closeModal)="closeServiceModal()" [moreServicesModal]="moreServicesModal"></app-service-modal>
+    </div>
+  </div>
+</section> 
