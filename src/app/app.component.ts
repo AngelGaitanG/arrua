@@ -5,11 +5,13 @@ import { HeroComponent } from './features/hero/hero.component';
 import { ServicesComponent } from './features/services/services.component';
 import { CommonModule } from '@angular/common';
 import { AboutComponent } from './features/about/about.component';
+import { DoctorsComponent } from './features/doctors/doctors.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, HeroComponent, ServicesComponent, CommonModule, AboutComponent],
+  imports: [RouterOutlet, HeaderComponent, HeroComponent, ServicesComponent, CommonModule, AboutComponent, DoctorsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
