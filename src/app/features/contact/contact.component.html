@@ -1,10 +1,22 @@
 <div class="contact-container">
   <div class="info-section">
-    <h2>Diagnóstico gratuito para nuevos pacientes</h2>
-    <p>Conozca el estado de sus dientes y obtenga recomendaciones personalizadas</p>
+    <div class="info-content">
+      <h2>Diagnóstico gratuito para nuevos pacientes</h2>
+      <p>Conozca el estado de sus dientes y obtenga recomendaciones personalizadas</p>
+    </div>
     <form>
-      <input type="text" placeholder="Ingrese su nombre" required>
-      <input type="tel" placeholder="Número de teléfono" required>
+      <div class="input-box">
+        <label for="name">
+          <img src="assets/icons/persona.png" alt="User">
+        </label>
+        <input type="text" placeholder="Ingrese su nombre" required>
+      </div>
+      <div class="input-box">
+          <label for="phone">
+          <img src="assets/icons/correo.png" alt="Phone">
+        </label>
+        <input type="email" placeholder="Ingrese su correo electrónico" required>
+      </div>
       <div class="consent">
         <input type="checkbox" id="consent" required>
         <label for="consent">Estoy de acuerdo con la Política de Privacidad del sitio</label>
