@@ -1,0 +1,68 @@
+.location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.location .title {
+    margin: 0 auto;
+    width: 900px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2C3134;
+    text-align: center;
+    margin-bottom: 1rem;
+    span {
+        color: #54ADB3;
+    }
+}
+
+.location .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    .address {
+        display: flex;
+        flex-direction: column;
+        label {
+            color: #54ADB3;
+        }
+        address {
+            font-size: 1.2rem;
+            display: inline;
+            color: #2C3134;
+        }
+    }
+
+    .phone {
+        display: flex;
+        flex-direction: column;
+        label {
+            color: #54ADB3;
+        }
+        p {
+            color: #2C3134;
+            font-size: 1.2rem;
+        }
+    }
+
+    .email {
+        display: flex;
+        flex-direction: column;
+        label {
+            color: #54ADB3;
+        }
+        p {
+            color: #2C3134;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.location .map {
+    border-radius: 1rem;
+    overflow: hidden;
+}
