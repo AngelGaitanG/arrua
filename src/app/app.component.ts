@@ -8,12 +8,13 @@ import { AboutComponent } from './features/about/about.component';
 import { DoctorsComponent } from './features/doctors/doctors.component';
 import { ContactComponent } from './features/contact/contact.component';
 import { LocationComponent } from './features/location/location.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, HeroComponent, ServicesComponent, CommonModule, AboutComponent, DoctorsComponent, ContactComponent, LocationComponent],
+  imports: [RouterOutlet, HeaderComponent, HeroComponent, ServicesComponent, CommonModule, AboutComponent, DoctorsComponent, ContactComponent, LocationComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
