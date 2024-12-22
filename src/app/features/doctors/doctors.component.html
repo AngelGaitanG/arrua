@@ -1,20 +1,109 @@
 <section class="doctors-section">
     <div class="section-header">
-      <h2>Equipo de <span class="highlight">experimentados</span> dentistas</h2>
-      <p class="subtitle">Nuestros doctores han trabajado en odontología por más de 10 años para que cada paciente se sienta cómodo</p>
+        <h2>Equipo de <span class="highlight">experimentados</span> dentistas</h2>
+        <p class="subtitle">Nuestros doctores han trabajado en odontología por más de 10 años para que cada paciente se sienta cómodo</p>
     </div>
     
-    <div class="doctors-list">
-      <div 
-        class="doctor-card" 
-        *ngFor="let doctor of doctors; let i = index" 
-        [ngClass]="{'expanded': i === expandedIndex}" 
-        (click)="expandCard(i)">
-        <img [src]="doctor.image" [alt]="doctor.name">
-        <div class="doctor-info" *ngIf="i === expandedIndex">
-          <h3>{{ doctor.name }}</h3>
-          <p>{{ doctor.position }}</p>
+    <!-- Versión Desktop -->
+    <div class="doctors-grid desktop-version">
+        <div class="doctor-card" 
+             *ngFor="let doctor of doctors; let i = index"
+             [class.expanded]="expandedIndex === i"
+             (click)="toggleExpand(i)">
+            <div class="card-image">
+                <img [src]="doctor.image" [alt]="doctor.name">
+            </div>
+
+            <!-- Contenido para hover -->
+            <div class="hover-content">
+                <h3>{{ doctor.name }}</h3>
+                <button class="know-more-btn">
+                    Saber más
+                </button>
+            </div>
+
+            <!-- Contenido expandido -->
+            <div class="expanded-content">
+                <div class="info-section specialty">
+                    <fa-icon [icon]="faTooth"></fa-icon>
+                    <span>{{ doctor.position }}</span>
+                </div>
+
+                <div class="info-section">
+                    <fa-icon [icon]="faClock"></fa-icon>
+                    <span>{{ doctor.schedule }}</span>
+                </div>
+
+                <div class="description">
+                    <p>{{ doctor.description }}</p>
+                </div>
+
+                <div class="specialties">
+                    <h4>Especialidades:</h4>
+                    <ul>
+                        <li *ngFor="let specialty of doctor.specialties">
+                            <fa-icon [icon]="faStar" class="specialty-icon"></fa-icon>
+                            {{ specialty }}
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="appointment-btn" (click)="scheduleAppointment(doctor, $event)">
+                    Agendar Cita
+                </button>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
+
+    <!-- Versión Mobile -->
+    <div class="doctors-grid mobile-version">
+        <div class="doctor-card" 
+             *ngFor="let doctor of doctors; let i = index"
+             [class.expanded]="expandedIndex === i"
+             (click)="toggleExpand(i)">
+            <div class="card-image">
+                <img [src]="doctor.image" [alt]="doctor.name">
+            </div>
+
+            <div class="card-content">
+                <h3>{{ doctor.name }}</h3>
+                
+                <div class="collapsed-content" *ngIf="expandedIndex !== i">
+                    <button class="know-more-btn">
+                        Ver más información
+                    </button>
+                </div>
+
+                <div class="expanded-content" *ngIf="expandedIndex === i">
+                    <div class="info-section specialty">
+                        <fa-icon [icon]="faTooth"></fa-icon>
+                        <span>{{ doctor.position }}</span>
+                    </div>
+
+                    <div class="info-section">
+                        <fa-icon [icon]="faClock"></fa-icon>
+                        <span>{{ doctor.schedule }}</span>
+                    </div>
+
+                    <div class="description">
+                        <p>{{ doctor.description }}</p>
+                    </div>
+
+                    <div class="specialties">
+                        <h4>Especialidades:</h4>
+                        <ul>
+                            <li *ngFor="let specialty of doctor.specialties">
+                                <fa-icon [icon]="faStar" class="specialty-icon"></fa-icon>
+                                {{ specialty }}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="appointment-btn" (click)="scheduleAppointment(doctor, $event)">
+                        Agendar Cita
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
