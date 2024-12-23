@@ -79,3 +79,35 @@
     }
   }
 } 
+
+// MEDIA QUERIES
+
+@media (max-width: 830px) {
+  .hero {
+    height: 700px;
+    .hero-image {
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 85%;
+        transform: translate(-50%, -50%);
+
+        .description {
+          gap: 10px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          p {
+            width: 100%;
+          }
+
+          .cta-button {
+            
+          }
+        }
+      }
+    }
+  }
+}

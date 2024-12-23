@@ -6,7 +6,7 @@
     @media (max-width: 768px) {
         padding: 40px 15px;
     }
-
+  
     .section-header {
         text-align: left;
         margin-bottom: 60px;
@@ -27,9 +27,9 @@
                 font-size: 1.8rem;
                 margin-bottom: 1rem;
             }
-
-            .highlight {
-                color: #00bcd4;
+  
+        .highlight {
+          color: #00bcd4;
                 position: relative;
                 &::after {
                     content: '';
@@ -46,9 +46,9 @@
                     transform: scaleX(1);
                 }
             }
-        }
-
-        .subtitle {
+      }
+  
+      .subtitle {
             color: #6c757d;
             font-size: 1.1rem;
             max-width: 450px;
@@ -63,7 +63,7 @@
 
     // Versión Desktop
     .desktop-version {
-        display: flex;
+      display: flex;
         width: 100%;
         height: 400px;
         gap: 4px;
@@ -71,12 +71,12 @@
         @media (max-width: 768px) {
             display: none;
         }
-
-        .doctor-card {
+  
+      .doctor-card {
             flex: 1;
             position: relative;
-            overflow: hidden;
-            cursor: pointer;
+        overflow: hidden;
+        cursor: pointer;
             transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 12px;
 
@@ -147,10 +147,10 @@
                 transform: translateY(20px);
                 transition: all 0.3s ease;
                 z-index: 1;
-                display: flex;
-                flex-direction: column;
+        display: flex;
+        flex-direction: column;
                 justify-content: center;
-                align-items: center;
+        align-items: center;
 
                 h3 {
                     font-size: 1.5rem;
@@ -259,8 +259,8 @@
                     font-weight: 500;
                     cursor: pointer;
                     transition: all 0.3s ease;
-
-                    &:hover {
+  
+        &:hover {
                         background-color: darken(#00bcd4, 10%);
                         transform: translateY(-2px);
                     }
@@ -359,11 +359,11 @@
                 width: 100%;
                 height: 200px;
                 position: relative;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
                     object-position: center 35%;
                 }
 
@@ -402,7 +402,7 @@
                     position: absolute;
                     left: 0;
                     width: 100%;
-                    text-align: center;
+          text-align: center;
 
                     .know-more-btn {
                         background: transparent;
@@ -501,8 +501,8 @@
 
                 .expanded-content {
                     padding: 15px;
-                }
-            }
+          }
         }
+      }
     }
-}
+  }
