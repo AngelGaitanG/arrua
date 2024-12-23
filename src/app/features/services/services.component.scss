@@ -6,27 +6,50 @@
   max-width: 850px;
   margin: 0 auto;
 
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
+
   .presentation {
     display: flex;
     align-items: end;
     margin-bottom: 30px;
-    h2 {
-        text-align: left;
-        width: 60%;
-        font-size: 30px;
-        color: #2B3233;
-        margin-bottom: 10px;
-        .necessary-services {
-            color: #54ADB3;
-        }
-  }
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      text-align: left;
+      width: 60%;
+      font-size: 30px;
+      color: #2B3233;
+      margin-bottom: 10px;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+
+      .necessary-services {
+        color: #54ADB3;
+      }
+    }
 
     p {
-        width: 40%;
-        font-size: 16px;
-        color: #666;
-        // margin-bottom: 30px;
+      width: 40%;
+      font-size: 16px;
+      color: #666;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        font-size: 14px;
+        text-align: left;
+      }
     }
   }
 
@@ -34,40 +57,67 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    @media (max-width: 768px) {
+      gap: 8px;
+    }
+
     .top {
       display: flex;
       gap: 10px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 8px;
+      }
 
       .service-card {
         cursor: pointer;
         width: 50%;
         height: 200px;
         background-color: rgba(84, 173, 179, 0.8);
-        background-size: 100%;
+        background-size: cover;
         background-position: center;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
         color: white;
         transition: transform 0.3s, box-shadow 0.3s;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          height: 160px;
+          padding: 15px;
+        }
+
         h3 {
           text-shadow: 1px 1px 5px #000;
           margin-top: 0px;
           text-align: left;
           font-size: 24px;
           transition: color 0.3s;
+
+          @media (max-width: 768px) {
+            font-size: 20px;
+          }
         }
-        
-  
+
         &:hover {
           transform: translateY(-5px);
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
       }
     }
+
     .bottom {
       display: flex;
       gap: 10px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 8px;
+      }
+
       .service-card {
         cursor: pointer;
         width: 35%;
@@ -80,22 +130,35 @@
         padding: 20px;
         color: white;
         transition: transform 0.3s, box-shadow 0.3s;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          height: 160px;
+          padding: 15px;
+        }
+
         h3 {
           text-shadow: 1px 1px 5px #000;
           margin-top: 0px;
           text-align: left;
           font-size: 24px;
           transition: color 0.3s;
+
+          @media (max-width: 768px) {
+            font-size: 20px;
+          }
         }
-  
+
         &:hover {
           transform: translateY(-5px);
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+          @media (max-width: 768px) {
+            transform: translateY(-3px);
+          }
         }
       }
     }
-
-
 
     .more-services {
       border-radius: 8px;
@@ -108,8 +171,22 @@
       cursor: pointer;
       transition: background-color 0.3s;
 
+      @media (max-width: 768px) {
+        width: 100%;
+        height: 160px;
+        align-items: center;
+        justify-content: center;
+      }
+
       &:hover {
         background-color: #555;
+      }
+
+      h3 {
+        @media (max-width: 768px) {
+          margin: 0;
+          font-size: 20px;
+        }
       }
     }
 
@@ -117,7 +194,7 @@
       grid-area: service1;
     }
 
-      .service-card.service-card-2 {
+    .service-card.service-card-2 {
       grid-area: service2;
     }
 
@@ -132,8 +209,6 @@
     .service-card.more-services {
       grid-area: service5;
     }
-
-    
   }
 
   .service-modal-container {
@@ -146,11 +221,20 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+
     .service-modal {
       position: relative;
       transform: none;
       width: auto;
       height: auto;
+      max-width: 90%;
+      margin: 20px;
+
+      @media (max-width: 768px) {
+        max-width: 95%;
+        margin: 10px;
+      }
     }
   }
 } 
